@@ -2,6 +2,12 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
+
+  # 設定整合模式
+  config.after_initialize do
+    Pay2go.integration_mode = :production
+  end
+
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and

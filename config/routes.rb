@@ -35,7 +35,8 @@ Rails.application.routes.draw do
 
   resources :orders do
      member do
-       get :pay_with_credit_card
+       get  :pay_with_credit_card
+       post :pay2go_cc_notify
      end
    end
 
