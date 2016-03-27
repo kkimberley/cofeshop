@@ -55,6 +55,8 @@ gem "roadie", "2.4.3"
 
 # 第三週
 gem "pay2go"
+gem "figaro"
+
 group :production do
   gem "pg"
   gem "rails_12factor"
