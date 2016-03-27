@@ -48,6 +48,9 @@ gem "aasm"
 
 gem "awesome_rails_console" # 讓你的 rails console 變整齊漂亮的 gem
 
+gem "letter_opener", group: :development
+
+gem "roadie", "2.4.3"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
