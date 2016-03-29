@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # 設定整合模式
   config.after_initialize do
-    Pay2go.integration_mode = :production
+    Pay2go.integration_mode = :development
   end
 
   config.cache_classes = true
