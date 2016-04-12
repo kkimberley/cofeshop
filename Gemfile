@@ -59,6 +59,10 @@ gem "figaro"
 gem "fog"
 gem "delayed_job_active_record"
 
+
+# 課外用的gem
+gem 'omniauth-facebook'
+
 group :production do
   gem "pg"
   gem "rails_12factor"

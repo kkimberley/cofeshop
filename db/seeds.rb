@@ -13,9 +13,9 @@ create_users = for i in 1..10 do
     )
 end
 
-  admin_user = User.create(
-    email: "yoyijun@gmail.com",
-    password: "11111111",
-    password_confirmation: "11111111",
-    is_admin: true
-    )
+  # admin_user = User.create(
+  #   email: "yoyijun@gmail.com",
+  #   password: "11111111",
+  #   password_confirmation: "11111111",
+  #   is_admin: true
+  #   )

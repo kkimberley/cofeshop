@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, except: [:pay2go_cc_notify, :pay2go_atm_complete]
   protect_from_forgery except: [:pay2go_cc_notify, :pay2go_atm_complete]
 
+  layout 'product', :only => [:show]
   def pay2go_atm_complete
     @order = Order.find_by_token(params[:id])
     json_data = JSON.parse(params[:JSONData])

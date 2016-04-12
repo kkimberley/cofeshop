@@ -1,50 +1,54 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">ArtStore</a>
-    </div>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<!-- ==================== Main Menu ============================ -->
+      <div id="stuck_container">
+        <div class="container">
+          <div class="row">
+            <div class="grid_12">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <h1><a href="/">Coffee Shop</a></h1>
+              <div class="menu_block">
+                <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+                  <ul class="sf-menu">
+                    <li id="menu1"><%= link_to("ctivities", about_products_path, method: :get) %></li>
+                    <li id="menu2"><%= link_to("Products", products_path) %></li>
+                    <li id="menu3">
+                      <%= link_to carts_path do  %>
+                        shopping cart <i class="fa fa-shopping-cart"> </i> ( <%= render_cart_items_count(current_cart) %> )
+                      <% end %>
+                    </li>
+                    <!-- admin list -->
+                    <% if !current_user %>
+                      <li id="menu4"> <%= link_to("登入", new_user_session_path) %> </li>
+                      <li id="menu5"> <%= link_to "Facebook 登入", user_omniauth_authorize_path(:facebook) %> </li>
+                    <% else %>
+                      <li id="menu6" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          Hi!, <%= current_user.email %>
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <%= link_to("Products", products_path) %>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to carts_path do  %>
-            購物車 <i class="fa fa-shopping-cart"> </i> ( <%= render_cart_items_count(current_cart) %> )
-          <% end %>
-        </li>
-
-        <% if !current_user %>
-          <li> <%= link_to("登入", new_user_session_path) %> </li>
-        <% else %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Hi!, <%= current_user.email %>
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-
-              <% if current_user.admin? %>
-                <li>
-                  <%= link_to("Admin 選單", admin_products_path ) %>
-                </li>
-              <% end %>
-              <li>
-                <%= link_to("個人訂單列表", account_orders_path ) %>
-              </li>
-              <li>
-                <%= link_to("登出", destroy_user_session_path, method: :delete ) %>
-              </li>
-            </ul>
-          </li>
-        <% end %>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+                          <% if current_user.admin? %>
+                            <li>
+                              <%= link_to("Admin 選單", admin_products_path ) %>
+                            </li>
+                          <% end %>
+                          <li>
+                            <%= link_to("個人訂單列表", account_orders_path ) %>
+                          </li>
+                          <li>
+                            <%= link_to("登出", destroy_user_session_path, method: :delete ) %>
+                          </li>
+                        </ul>
+                      </li>
+                    <% end %>
+                  </ul>
+                </nav>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- ==================== Main Menu ============================ -->

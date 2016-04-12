@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root "products#index"
+  root "products#about"
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   namespace :admin do
     resources :products
 
@@ -42,6 +42,9 @@ Rails.application.routes.draw do
    end
 
   resources :products do
+    collection do
+      get :about
+    end
     member do
       post :add_to_cart
     end

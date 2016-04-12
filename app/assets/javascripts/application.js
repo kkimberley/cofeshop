@@ -15,4 +15,8 @@
 //= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
+//= require bootstrap/carousel
 //= require_tree .
+//= require camera
+//= require jquery-migrate-1.1.1
+//= require index

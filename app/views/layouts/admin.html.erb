@@ -5,17 +5,28 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'></head>
 <body>
-  <div class="container">
+  <div class="body_product">
     <%= render "common/navbar" %>
     <div class="row">
+
       <div class="col-md-2">
-        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-          <li> <%= link_to("Products", admin_products_path) %> </li>
-          <li> <%= link_to("Users", admin_users_path) %> </li>
-          <li> <%= link_to("Orders", admin_orders_path) %> </li>
-        </ul>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                  <%= link_to("Products", admin_products_path) %>
+                </li>
+                <li>
+                  <%= link_to("Users", admin_users_path) %>
+                </li>
+                <li>
+                  <%= link_to("Orders", admin_orders_path) %>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
       </div>
       <div class="col-md-10">
         <%= notice_message %>

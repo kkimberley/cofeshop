@@ -1,8 +1,7 @@
-<div class="row">
-  <div class="col-md-12">
-
+<div class="co_container">
+  <!-- ----------- Order Items Start ------------ -->
+  <div class="co_content">
     <h2> 訂單明細 </h2>
-
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -11,8 +10,8 @@
           <th>數量</th>
         </tr>
       </thead>
-      <tbody>
 
+      <tbody>
         <% @order_items.each do |order_item| %>
           <tr>
             <td>
@@ -26,55 +25,58 @@
             </td>
           </tr>
         <% end %>
-
       </tbody>
     </table>
-
     <div class="total clearfix">
       <span class="pull-right">
         總計 <%= @order.total %> NTD
       </span>
     </div>
-
-     <hr>
-
-     <h2> 寄送資訊 </h2>
-
-     <table class="table table-striped table-bordered">
-      <tbody>
-        <tr>
-          <td>
-            訂購人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order_info.billing_name %> - <%= @order_info.billing_address %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            收件人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order_info.shipping_name %> - <%= @order_info.shipping_address %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-     <% if !@order.is_paid? %>
-       <div class="pull-right" style="padding: 10px;">
-         <%= render "pay_with_credit_card", order: @order %>
-       </div>
-       <div class="pull-right" style="padding: 10px;">
-         <%= render "pay_with_atm", order: @order %>
-       </div>
-     <% else %>
-       <p class="text-center">此訂單已完成付款</p>
-     <% end %>
-
   </div>
+  <!-- ----------- Order Items End ------------ -->
+
+  <hr class="co_hr">
+
+  <!-- ----------- Ship Info Start ------------ -->
+  <div class="co_content">
+   <h2> 寄送資訊 </h2>
+   <table class="table table-striped table-bordered">
+    <tbody>
+      <tr>
+        <td>
+          訂購人
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= @order_info.billing_name %> - <%= @order_info.billing_address %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          收件人
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= @order_info.shipping_name %> - <%= @order_info.shipping_address %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- pay button -->
+  <% if !@order.is_paid? %>
+   <div class="pull-right" style="padding: 10px;">
+     <%= render "pay_with_credit_card", order: @order %>
+   </div>
+   <div class="pull-right" style="padding: 10px;">
+     <%= render "pay_with_atm", order: @order %>
+   </div>
+ <% else %>
+   <p class="text-center">此訂單已完成付款</p>
+ <% end %>
+  </div>
+  <!-- ----------- Ship Info End ------------ -->
+
 </div>

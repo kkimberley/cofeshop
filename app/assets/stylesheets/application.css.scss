@@ -17,6 +17,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "stuck";
+@import "superfish";
+@import "camera";
+@import "reset";
+@import "style";
+@import "product_item";
+@import "checkout";
 
 .product-price{
   padding-top: 20px;
@@ -25,4 +32,8 @@
   font-size: 30px;
   font-weight: bold;
   color: #ff007c;
+}
+
+.main_menu {
+  font-family: 'Candal', sans-serif;
 }

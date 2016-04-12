@@ -1,14 +1,35 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.photo.present? %>
-          <%= image_tag(product.photo.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
+<!-- Products -->
+    <script>
+    $(document).ready(function(){
+
+      <% if @page == "products" %>
+        $("#menu2").attr('class', 'current');
       <% end %>
-      <%= product.title %> $ <%= product.price %>
-    </div>
-  <% end %>
+    });
+    </script>
+<div class="products">
+  <div class="cl">&nbsp;</div>
+  <ul>
+    <% @products.each do |product| %>
+      <li style="margin-top: 10px; margin-left: 10px;">
+        <%= link_to product_path(product) do %>
+          <% if product.photo.present? %>
+            <%= image_tag(product.photo.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+
+        <div class="product-info">
+          <h3><%= product.title %> </h3>
+          <div class="product-desc">
+            <h4><%= product.description %> </h4>
+            <strong class="price">$ <%= product.price %></strong> </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="cl">&nbsp;</div>
 </div>
+<!-- End Products -->
+

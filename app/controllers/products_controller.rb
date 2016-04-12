@@ -1,10 +1,18 @@
 class ProductsController < ApplicationController
+
+  layout 'product', :only => [:index]
+
   def index
     @products = Product.all
+    @page = "products"
   end
 
   def show
     @product = Product.find(params[:id])
+  end
+
+  def about
+    @page = "about"
   end
 
   def add_to_cart
