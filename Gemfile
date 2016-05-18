@@ -36,6 +36,8 @@ gem "awesome_rails_console" # 讓你的 rails console 變整齊漂亮的 gem
 gem "devise" #登入機制
 gem "bootstrap-sass"
 gem "simple_form" #replace form
+gem "carrierwave"
+gem "mini_magick"
 # ===================My gem=================================
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
