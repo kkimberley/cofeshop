@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  layout 'product', :only => [:index]
+  layout 'product', :only => [:index, :show]
 
   def index
     @products = Product.all

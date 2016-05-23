@@ -1,54 +1,76 @@
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-<!-- ==================== Main Menu ============================ -->
-      <div id="stuck_container">
-        <div class="container">
-          <div class="row">
-            <div class="grid_12">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <h1><a href="/">Coffee Shop</a></h1>
-              <div class="menu_block">
-                <nav class="horizontal-nav full-width horizontalNav-notprocessed">
-                  <ul class="sf-menu">
-                    <li id="menu1"><%= link_to("ctivities", about_products_path, method: :get) %></li>
-                    <li id="menu2"><%= link_to("Products", products_path) %></li>
-                    <li id="menu3">
-                      <%= link_to carts_path do  %>
-                        shopping cart <i class="fa fa-shopping-cart"> </i> ( <%= render_cart_items_count(current_cart) %> )
-                      <% end %>
-                    </li>
-                    <!-- admin list -->
-                    <% if !current_user %>
-                      <li id="menu4"> <%= link_to("登入", new_user_session_path) %> </li>
-                      <li id="menu5"> <%= link_to "Facebook 登入", user_omniauth_authorize_path(:facebook) %> </li>
-                    <% else %>
-                      <li id="menu6" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                          Hi!, <%= current_user.email %>
-                          <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'><!-- ==================== Main Menu ============================ -->
+<div class="lp-element lp-pom-block" id="lp-pom-block-8">
+<div id="lp-pom-block-8-color-overlay"></div>
+<div class="lp-pom-block-content"></div>
 
-                          <% if current_user.admin? %>
-                            <li>
-                              <%= link_to("Admin 選單", admin_products_path ) %>
-                            </li>
-                          <% end %>
-                          <li>
-                            <%= link_to("個人訂單列表", account_orders_path ) %>
-                          </li>
-                          <li>
-                            <%= link_to("登出", destroy_user_session_path, method: :delete ) %>
-                          </li>
-                        </ul>
-                      </li>
-                    <% end %>
-                  </ul>
-                </nav>
-                <div class="clear"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="nav_right">
+
+  <!-- ============================ Menu Start ============================= -->
+  <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+    <!-- ======= Home ====== -->
+    <div class="lp-element lp-pom-box p-pom-box-common" id="lp-pom-box-home">
+      <%= link_to root_path, method: :get, :class => "lp-pom-button-22 lp-element lp-pom-button" do %>
+        <span class="label" title="Home">H</span>
+      <% end %>
+    </div>
+    <!-- ======= Product ====== -->
+    <div class="lp-element lp-pom-box p-pom-box-common" id="lp-pom-box-product">
+      <%= link_to products_path, method: :get, :class => "lp-pom-button-22 lp-element lp-pom-button" do %>
+        <span class="label" title="Product">P</span>
+      <% end %>
+    </div>
+    <!-- ======= Shopping ====== -->
+    <div class="lp-element lp-pom-box p-pom-box-common" id="lp-pom-box-shop">
+      <div id="lp-pom-box-41-color-overlay"></div>
+      <%= link_to carts_path, method: :get, :class => "lp-pom-button-22 lp-element lp-pom-button" do %>
+        <span class="label" title="Shopping Cart"><i class="fa fa-shopping-cart"> </i><%= render_cart_items_count(current_cart) %></span>
+      <% end %>
+    </div>
+    <!-- ======= Login ====== -->
+      <!-- admin list -->
+    <% if !current_user %>
+      <div class="lp-element lp-pom-box p-pom-box-common" id="lp-pom-box-login">
+        <div id="lp-pom-box-41-color-overlay"></div>
+        <%= link_to new_user_session_path, :class => "lp-pom-button-22 lp-element lp-pom-button" do %>
+          <span class="label" title="Login">L</span>
+        <% end %>
       </div>
+
+      <div class="lp-element lp-pom-box p-pom-box-common" id="lp-pom-box-facebook">
+        <div id="lp-pom-box-41-color-overlay"></div>
+        <%= link_to user_omniauth_authorize_path(:facebook), :class => "lp-pom-button-22 lp-element lp-pom-button" do %>
+          <span class="label" title="Facebook Login">F</span>
+        <% end %>
+      </div>
+
+    <% else %>
+      <div class="lp-element lp-pom-box p-pom-box-common" id="lp-pom-box-user">
+        <div id="lp-pom-box-41-color-overlay"></div>
+        <%= link_to "#", {'data-toggle' => 'dropdown', :class => "dropdown-toggle lp-pom-button-22 lp-element lp-pom-button" } do %>
+          <span class="label" title=<%= current_user.email %>>U<b class="caret"></b></span>
+        <% end %>
+        <ul class="dropdown-menu">
+
+          <% if current_user.admin? %>
+            <li>
+              <%= link_to("Admin 選單", admin_products_path ) %>
+            </li>
+          <% end %>
+          <li>
+            <%= link_to("個人訂單列表", account_orders_path ) %>
+          </li>
+          <li>
+            <%= link_to("登出", destroy_user_session_path, method: :delete ) %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  </nav>
+
+<!-- ============================ Menu End ============================= -->
+</div>
+
+</div>
 <!-- ==================== Main Menu ============================ -->
