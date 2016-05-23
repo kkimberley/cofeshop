@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
@@ -24,16 +23,10 @@
 @import "style";
 @import "product_item";
 @import "checkout";
+@import "about";
+@import "product";
+@import "simple-sidebar";
 
-.product-price{
-  padding-top: 20px;
-  padding-bottom: 20px;
-
-  font-size: 30px;
-  font-weight: bold;
-  color: #ff007c;
-}
-
-.main_menu {
-  font-family: 'Candal', sans-serif;
+.body_product {
+    background-image: image-url("bg.jpg");
 }
