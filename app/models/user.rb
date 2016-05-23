@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+        # :recoverable, :rememberable, :trackable, :validatable, :confirmable --> sign up need confirm
   devise  :registerable, :rememberable, :trackable, :omniauthable, :omniauth_providers => [:facebook]
   has_many :orders
 

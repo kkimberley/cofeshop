@@ -58,11 +58,11 @@ gem "pay2go"
 gem "figaro"
 gem "fog"
 gem "delayed_job_active_record"
-gem "i18n-debug"
+
 
 # 課外用的gem
 gem 'omniauth-facebook'
-
+gem 'i18n-debug'
 group :production do
   gem "pg"
   gem "rails_12factor"

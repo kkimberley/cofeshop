@@ -2,10 +2,5 @@ zh-TW:
   simple_form:
     labels:
       product:
-        description: "描述"
-        title: "抬頭"
-    helpers:
-      submit:
-        product:
-          create: "新建部门"
-          update: "保存编辑"
+        title: 商品名稱1
+        description: 描述
