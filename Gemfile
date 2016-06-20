@@ -39,6 +39,7 @@ gem "simple_form" #replace form
 gem "carrierwave"
 gem "mini_magick"
 gem "font-awesome-rails"
+gem "aasm" #狀態機
 # ===================My gem=================================
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
