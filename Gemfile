@@ -40,6 +40,8 @@ gem "carrierwave"
 gem "mini_magick"
 gem "font-awesome-rails"
 gem "aasm" #狀態機
+gem "letter_opener", group: :development #指定只有在開發階段使用
+gem "roadie", "2.4.3" #css for letter
 # ===================My gem=================================
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
